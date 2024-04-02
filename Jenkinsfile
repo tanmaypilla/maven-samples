@@ -8,6 +8,7 @@ pipeline {
     }
 
     stage('test') {
+      agent any
       steps {
         sh 'mvn test'
       }
@@ -25,5 +26,9 @@ pipeline {
       }
     }
 
+  }
+  tools {
+    maven 'DHT_MVN'
+    jdk 'DHT_SENSE'
   }
 }
